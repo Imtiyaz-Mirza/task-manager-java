@@ -16,5 +16,11 @@ public class day1longtermprj {
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println("Task " + (i + 1) + ": " + tasks.get(i));
         }
+        tasks.remove(0);
+        tasks.set(1, "Implement in projects and submit it on github !");
+        System.out.println("\n Updated Tasks !");
+        for (String every : tasks) {
+            System.out.println(every);
+        }
     }
 }
