@@ -27,8 +27,10 @@ public class day1longtermprj {
             String task = userInput.nextLine();
             addTask(task);
         }
+        userInput.close();
         showTasks();
         System.out.println("Total tasks : " + tasks.size());
+
     }
 
 }
