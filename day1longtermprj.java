@@ -5,7 +5,7 @@ public class day1longtermprj {
     static ArrayList<String> tasks = new ArrayList<>();
 
     static void addTask(Scanner userInput) {
-        System.out.print("Enter task name : ");
+        System.out.print("Enter the task name : ");
         String task = userInput.nextLine();
         tasks.add(task);
         System.out.println("Task added Successfully !");
