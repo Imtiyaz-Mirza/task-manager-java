@@ -23,6 +23,23 @@ public class day1longtermprj {
         }
     }
 
+    static void deleteTask(Scanner userInput) {
+        showTasks();
+        if (tasks.isEmpty()) {
+            return;
+        }
+        System.out.print("Enter the Task number to delete : ");
+        int taskNum = userInput.nextInt();
+        userInput.nextLine();
+        int index = taskNum - 1;
+        if (index >= 0 && index < tasks.size()) {
+            String removedTask = tasks.remove(index);
+            System.out.println("Deleted task : " + removedTask);
+        } else {
+            System.out.println("Invalid task name !");
+        }
+    }
+
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
@@ -30,7 +47,8 @@ public class day1longtermprj {
             System.out.println("\n==== Smart Task Manager ====");
             System.out.println("1. Add Task");
             System.out.println("2. View Tasks");
-            System.out.println("3. Exit");
+            System.out.println("3. Delete Task");
+            System.out.println("4. Exit");
             System.out.print("Choose option: ");
 
             int option = sc.nextInt();
@@ -44,6 +62,9 @@ public class day1longtermprj {
                     showTasks();
                     break;
                 case 3:
+                    deleteTask(sc);
+                    break;
+                case 4:
                     System.out.println("Thank you for using Smart Task Manager 🙌");
                     return;
                 default:
