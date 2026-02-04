@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class day1longtermprj {
-    static ArrayList<String> tasks = new ArrayList<>();
+    static ArrayList<Task> tasks = new ArrayList<>();
 
     static void addTask(Scanner userInput) {
         System.out.print("Enter the task name : ");
-        String task = userInput.nextLine();
-        tasks.add(task);
+        String taskTitle = userInput.nextLine();
+        tasks.add(new Task(taskTitle));
         System.out.println("Task added Successfully !");
     }
 
@@ -18,7 +18,7 @@ public class day1longtermprj {
         }
         System.out.println("Your Tasks : ");
         for (int i = 0; i < tasks.size(); i++) {
-            System.out.println((i + 1) + ". " + tasks.get(i));
+            System.out.println((i + 1) + ". " + tasks.get(i).getTitle());
 
         }
     }
@@ -33,8 +33,8 @@ public class day1longtermprj {
         userInput.nextLine();
         int index = taskNum - 1;
         if (index >= 0 && index < tasks.size()) {
-            String removedTask = tasks.remove(index);
-            System.out.println("Deleted task : " + removedTask);
+            Task removedTask = tasks.remove(index);
+            System.out.println("Deleted task : " + removedTask.getTitle());
         } else {
             System.out.println("Invalid task name !");
         }
@@ -52,7 +52,7 @@ public class day1longtermprj {
         if (index >= 0 && index < tasks.size()) {
             System.out.print("Enter new task name : ");
             String newTask = userInput.nextLine();
-            tasks.set(index, newTask);
+            tasks.get(index).setTitle(newTask);
             System.out.println("Your task has been successfully updated !");
         } else {
             System.out.println("Invalid task number !");
